@@ -1,20 +1,16 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react'
+import { View, Text } from 'react-native'
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Olá Mundo!</Text>
-      <Text>Bem Vindo Sandro Torres!</Text>
-    </View>
-  );
+import Header from './src/components/Header'
+import Post from './src/components/Post'
+
+export default class App extends Component {
+  render() {
+    return (
+      <View style={{ flex: 1 }}>
+        <Header />
+        <Post image={require('./assets/imgs/fence.jpg')} />
+      </View>
+    )
+  }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
