@@ -7,32 +7,29 @@ import {
     TouchableOpacity
 } from 'react-native'
 
-class Login extends Component {
+class Register extends Component {
     state = {
+        name: '',
         email: '',
         password: ''
     }
-
-    login = () => {
-        this.props.navigation.navigate('Profile')
-    }
-
     render() {
         return (
             <View style={styles.container}>
+                <TextInput placeholder='Nome' style={styles.input}
+                    autoFocus={true} value={this.state.name}
+                    onChangeText={name => this.setState({ name })} 
+                />
                 <TextInput placeholder='Email' style={styles.input}
-                    autoFocus={true} keyboardType='email-address'
-                    onChangeText={email => this.setState({ email })} />
+                    keyboardType='email-address' value={this.state.email}
+                    onChangeText={email => this.setState({ email })} 
+                />
                 <TextInput placeholder='Senha' style={styles.input}
                     secureTextEntry={true} value={this.state.password}
-                    onChangeText={password => this.setState({ password })} />
-                <TouchableOpacity onPress={this.login} style={styles.buttom}>
-                    <Text style={styles.buttomText}>Login</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => {
-                    this.props.navigation.navigate('Register')
-                }} style={styles.buttom}>
-                    <Text style={styles.buttomText}>Criar nova conta</Text>
+                    onChangeText={password => this.setState({ password })} 
+                />
+                <TouchableOpacity onPress={() => {}} style={styles.buttom}>
+                    <Text style={styles.buttomText}>Salvar</Text>
                 </TouchableOpacity>
             </View>
         )
@@ -48,20 +45,21 @@ const styles = StyleSheet.create({
     buttom: {
         marginTop: 30,
         padding: 10,
-        backgroundColor: '#4286f4',
+        backgroundColor: '#4286f4'
     },
     buttomText: {
         fontSize: 20,
-        color: '#fff'
+        color: '#FFF'
     },
     input: {
         marginTop: 20,
         width: '90%',
-        backgroundColor: '#EEE',
         height: 40,
+        backgroundColor: '#EEE',
         borderWidth: 1,
-        borderColor: '#333'
+        borderColor: '#333',
+        paddingLeft: 15
     }
 })
 
-export default Login
+export default Register
