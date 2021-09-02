@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@use-expo/font": "^2.0.0",
-    "axios": "0.18.0",
+    "axios": "0.21.1",
     "expo": "~37.0.3",
     "react": "~16.9.0",
     "react-dom": "~16.9.0",
